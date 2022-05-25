@@ -13,16 +13,31 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Auth::routes();
+
+Route::group(['middleware' => ['guest']], function () {
+
+    Route::get('/', function () {
+        return view('auth.login');//الدخول مباشرة الى صفحة التسجيل اول مرة 
+    });
+
+});
+
+
+ //==============================Translate all pages============================
 Route::group(
-	[
-		'prefix' => LaravelLocalization::setLocale(),
-		'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath' ]
-	], function(){ //...
-		Route::get('/', function()
-	{
-		return View('dashboard');
-	});
-	});
+    [
+        'prefix' => LaravelLocalization::setLocale(),
+        'middleware' => ['localeSessionRedirect', 'localizationRedirect', 'localeViewPath', 'auth']
+    ], function () {
+
+     //==============================dashboard============================
+    Route::get('/dashboard', 'HomeController@index')->name('dashboard');
+
+   //==============================dashboard============================
+    Route::group(['namespace' => 'Grades'], function () {
+        Route::resource('Grades', 'GradeController');
+    });
 
 
-
+});

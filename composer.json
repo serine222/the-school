@@ -14,7 +14,11 @@
         "guzzlehttp/guzzle": "^6.3.1|^7.0.1",
         "laravel/framework": "^7.29",
         "laravel/tinker": "^2.5",
-        "mcamara/laravel-localization": "^1.7"
+        "laravel/ui": "2.4",
+        "mcamara/laravel-localization": "^1.6",
+        "php-flasher/flasher-toastr-laravel": "^1.0",
+        "spatie/laravel-translatable": "^4.6",
+        "yoeunes/toastr": "^1.2"
     },
     "require-dev": {
         "facade/ignition": "^2.0",
@@ -30,7 +34,9 @@
     },
     "extra": {
         "laravel": {
-            "dont-discover": []
+            "dont-discover": [
+                "barryvdh/laravel-ide-helper"
+            ]
         }
     },
     "autoload": {
