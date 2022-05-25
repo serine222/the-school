@@ -18,7 +18,7 @@ Auth::routes();
 Route::group(['middleware' => ['guest']], function () {
 
     Route::get('/', function () {
-        return view('auth.login');
+        return view('auth.login');//الدخول مباشرة الى صفحة التسجيل اول مرة 
     });
 
 });
