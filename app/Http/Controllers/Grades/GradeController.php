@@ -31,16 +31,25 @@ class GradeController extends Controller
    */
   public function store(StoreGrades $request)
   {
+
+    // if (Grades::Where('Name->ar',$request->Name_ar)->orWhere('Name->en',$request->Name)->exists())
+    // {
+    //   return  redirect()->back()->WithErrors(trans('Grades_trans.Processes'));
+    return redirect()->back()->withErrors(['error' => trans('Grades_trans.exists')]);
+    // }
+
+
+
       try {
           $validated = $request->validated();
           $Grade = new Grade();
-          /*
-          $translations = [
-              'en' => $request->Name_en,
-              'ar' => $request->Name
-          ];
-          $Grade->setTranslations('Name', $translations);
-          */
+
+        //   $translations = [
+        //       'en' => $request->Name_en,
+        //       'ar' => $request->Name
+        //   ];
+        //   $Grade->setTranslations('Name', $translations);
+
           $Grade->Name = ['en' => $request->Name_en, 'ar' => $request->Name];
           $Grade->Notes = $request->Notes;
           $Grade->save();
@@ -63,6 +72,7 @@ class GradeController extends Controller
    */
    public function update(StoreGrades $request)
  {
+
    try {
        $validated = $request->validated();
        $Grades = Grade::findOrFail($request->id);

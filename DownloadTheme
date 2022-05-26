@@ -1,0 +1,43 @@
+[33mcommit 14262afaab4a9dec9b10fefd2d620d77bf92f78a[m[33m ([m[1;36mHEAD -> [m[1;32mDownloadTheme[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;31morigin/DownloadTheme[m[33m)[m
+Author: Samir Gamal <samir.gamal77@yahoo.com>
+Date:   Mon Jan 11 22:05:41 2021 +0300
+
+    Theme without codes
+
+[1mdiff --git a/resources/views/empty.blade.php b/resources/views/empty.blade.php[m
+[1mindex dca48d5..12403db 100644[m
+[1m--- a/resources/views/empty.blade.php[m
+[1m+++ b/resources/views/empty.blade.php[m
+[36m@@ -1,5 +1,6 @@[m
+ @extends('layouts.master')[m
+ @section('css')[m
+[32m+[m
+ @section('title')[m
+     empty[m
+ @stop[m
+[36m@@ -9,7 +10,7 @@[m
+ <div class="page-title">[m
+     <div class="row">[m
+         <div class="col-sm-6">[m
+[31m-            <h4 class="mb-0"> Page Title</h4>[m
+[32m+[m[32m            <h4 class="mb-0"> ncvlxcnvxcnvxcv</h4>[m
+         </div>[m
+         <div class="col-sm-6">[m
+             <ol class="breadcrumb pt-0 pr-0 float-left float-sm-right ">[m
+[36m@@ -35,4 +36,5 @@[m
+ <!-- row closed -->[m
+ @endsection[m
+ @section('js')[m
+[32m+[m
+ @endsection[m
+[1mdiff --git a/routes/web.php b/routes/web.php[m
+[1mindex 7f99fba..b9aa92b 100644[m
+[1m--- a/routes/web.php[m
+[1m+++ b/routes/web.php[m
+[36m@@ -15,4 +15,4 @@[m [muse Illuminate\Support\Facades\Route;[m
+ [m
+ Route::get('/', function () {[m
+     return view('dashboard');[m
+[31m-});[m
+\ No newline at end of file[m
+[32m+[m[32m});[m

@@ -17,5 +17,7 @@ return [
     'Edit'=>'Edit',
     'Delete'=>'Delete',
     'Close' => 'Close',
+    'exists' => 'This era exists',
+
 
 ];
