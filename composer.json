@@ -16,6 +16,7 @@
         "laravel/tinker": "^2.5",
         "laravel/ui": "2.4",
         "mcamara/laravel-localization": "^1.6",
+        "php-flasher/flasher-toastr-laravel": "^1.0",
         "spatie/laravel-translatable": "^4.6",
         "yoeunes/toastr": "^1.2"
     },
