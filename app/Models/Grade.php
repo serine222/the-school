@@ -16,3 +16,4 @@ class Grade extends Model
     public $timestamps = true;
 
 }
+
