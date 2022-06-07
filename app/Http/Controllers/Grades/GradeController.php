@@ -56,6 +56,7 @@ class GradeController extends Controller
           $Grade->save();
           toastr()->success(trans('messages.success'));
           return redirect()->route('Grades.index');
+
       }
 
       catch (\Exception $e){
