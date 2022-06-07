@@ -23,4 +23,3 @@ class Grade extends Model
     }
 
 }
-

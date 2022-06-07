@@ -3,8 +3,8 @@
 
 namespace App\Http\Controllers\Grades;
 use App\Http\Controllers\Controller;
-use CodeZero\UniqueTranslation\UniqueTranslationRule;
 use App\Models\Classroom;
+use CodeZero\UniqueTranslation\UniqueTranslationRule;
 
 use App\Http\Requests\StoreGrades;
 use App\Models\Grade;
@@ -34,14 +34,7 @@ class GradeController extends Controller
   public function store(StoreGrades $request)
   {
 
-    //   if (Grade::where('Name->ar', $request->Name)->orWhere('Name->en',$request->Name_en)->exists()) {
-
-    //       return redirect()->back()->withErrors(trans('Grades_trans.exists'));
-    //   }
-
-
  try {
-
           $validated = $request->validated();
           $Grade = new Grade();
           /*
@@ -56,7 +49,6 @@ class GradeController extends Controller
           $Grade->save();
           toastr()->success(trans('messages.success'));
           return redirect()->route('Grades.index');
-
       }
 
       catch (\Exception $e){
@@ -99,8 +91,7 @@ class GradeController extends Controller
    */
   public function destroy(Request $request)
   {
-
-    $MyClass_id = Classroom::where('Grade_id',$request->id)->pluck('Grade_id');
+      $MyClass_id = Classroom::where('Grade_id',$request->id)->pluck('Grade_id');
 
       if($MyClass_id->count() == 0){
 
@@ -115,6 +106,7 @@ class GradeController extends Controller
           return redirect()->route('Grades.index');
 
       }
+
 
   }
 

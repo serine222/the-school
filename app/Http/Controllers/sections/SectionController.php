@@ -1,7 +1,5 @@
 <?php
 namespace App\Http\Controllers\Sections;
-use CodeZero\UniqueTranslation\UniqueTranslationRule;
-
 use App\Http\Controllers\Controller;
 use App\Models\Classroom;
 use App\Models\Grade;
@@ -48,8 +46,7 @@ class SectionController extends Controller
       $Sections->save();
       toastr()->success(trans('messages.success'));
 
-     return redirect()->route('Sections.index');
-
+      return redirect()->route('Sections.index');
   }
 
   catch (\Exception $e){
