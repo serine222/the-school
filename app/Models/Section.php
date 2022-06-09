@@ -11,7 +11,7 @@ class Section extends Model
     public $translatable = ['Name_Section'];
     protected $fillable=['Name_Section','Grade_id','Class_id'];
 
-    protected $table = 'Sections';
+    protected $table = 'sections';
     public $timestamps = true;
 
 

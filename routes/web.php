@@ -18,7 +18,7 @@ Auth::routes();
 Route::group(['middleware' => ['guest']], function () {
 
     Route::get('/', function () {
-        return view('auth.login');//الدخول مباشرة الى صفحة التسجيل اول مرة
+        return view('auth.login');
     });
 
 });
@@ -39,33 +39,30 @@ Route::group(
         Route::resource('Grades', 'GradeController');
     });
 
-     //==============================Classrooms============================
-     Route::group(['namespace' => 'Classrooms'], function () {
+    //==============================Classrooms============================
+    Route::group(['namespace' => 'Classrooms'], function () {
         Route::resource('Classrooms', 'ClassroomController');
         Route::post('delete_all', 'ClassroomController@delete_all')->name('delete_all');
+
         Route::post('Filter_Classes', 'ClassroomController@Filter_Classes')->name('Filter_Classes');
+
     });
 
-   //==============================Sections============================
 
-   Route::group(['namespace' => 'Sections'], function () {
+    //==============================Sections============================
 
-    Route::resource('Sections', 'SectionController');
+    Route::group(['namespace' => 'Sections'], function () {
 
-    Route::get('/classes/{id}', 'SectionController@getclasses');
+        Route::resource('Sections', 'SectionController');
 
-});
+        Route::get('/classes/{id}', 'SectionController@getclasses');
 
- //==============================Teachers============================
- Route::group(['namespace' => 'Teachers'], function () {
+    });
+
+//==============================Teachers============================
+Route::group(['namespace' => 'Teachers'], function () {
     Route::resource('Teachers', 'TeacherController');
 });
 });
-
-
-
-
-
-
 
 

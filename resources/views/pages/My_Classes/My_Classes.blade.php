@@ -1,6 +1,8 @@
 @extends('layouts.master')
 @section('css')
     @toastr_css
+
+
 @section('title')
     {{ trans('My_Classes_trans.title_page') }}
 @stop
@@ -34,23 +36,24 @@
                 {{ trans('My_Classes_trans.add_class') }}
             </button>
 
-            <button type="button" class="button x-small" id="btn_delete_all">
-                {{ trans('My_Classes_trans.delete_checkbox') }}
-            </button>
+                <button type="button" class="button x-small" id="btn_delete_all">
+                    {{ trans('My_Classes_trans.delete_checkbox') }}
+                </button>
+
 
             <br><br>
 
+                <form action="{{ route('Filter_Classes') }}" method="POST">
+                    {{ csrf_field() }}
+                    <select class="selectpicker" data-style="btn-info" name="Grade_id" required
+                            onchange="this.form.submit()">
+                        <option value="" selected disabled>{{ trans('My_Classes_trans.Search_By_Grade') }}</option>
+                        @foreach ($Grades as $Grade)
+                            <option value="{{ $Grade->id }}">{{ $Grade->Name }}</option>
+                        @endforeach
+                    </select>
+                </form>
 
-            <form action="{{ route('Filter_Classes') }}" method="POST">
-                {{ csrf_field() }}
-                <select class="selectpicker" data-style="btn-info" name="Grade_id" required
-                        onchange="this.form.submit()">
-                    <option value="" selected disabled>{{ trans('My_Classes_trans.Search_By_Grade') }}</option>
-                    @foreach ($Grades as $Grade)
-                        <option value="{{ $Grade->id }}">{{ $Grade->Name }}</option>
-                    @endforeach
-                </select>
-            </form>
 
 
             <div class="table-responsive">
@@ -66,7 +69,8 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @if (isset($details))
+
+                    @if (isset($details))
 
                         <?php $List_Classes = $details; ?>
                     @else
@@ -299,9 +303,11 @@
 
     </div>
 
-
-
 </div>
+</div>
+
+
+
 <!-- حذف مجموعة صفوف -->
 <div class="modal fade" id="delete_all" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
      aria-hidden="true">
@@ -339,11 +345,6 @@
 
 </div>
 
-</div>
-</div>
-
-</div>
-
 <!-- row closed -->
 @endsection
 @section('js')
@@ -357,11 +358,17 @@
             $("#datatable input[type=checkbox]:checked").each(function() {
                 selected.push(this.value);
             });
+
             if (selected.length > 0) {
                 $('#delete_all').modal('show')
                 $('input[id="delete_all_id"]').val(selected);
             }
         });
     });
+
 </script>
+
+
+
+
 @endsection
