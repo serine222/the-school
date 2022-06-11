@@ -59,8 +59,8 @@ Route::group(
 
     });
 
-//==============================Teachers============================
-Route::group(['namespace' => 'Teachers'], function () {
+  //==============================Teachers============================
+  Route::group(['namespace' => 'Teachers'], function () {
     Route::resource('Teachers', 'TeacherController');
 });
 });

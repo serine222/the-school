@@ -1,7 +1,9 @@
 <?php
-use App\Models\type__bloods;
-use Illuminate\Database\Seeder;
+use App\Models\Type_Blood;
+use Illuminate\Database\seeder;
 use Illuminate\Support\Facades\DB;
+use CodeZero\UniqueTranslation\UniqueTranslationRule;
+
 class BloodTableSeeder extends Seeder
 {
     /**
@@ -16,7 +18,7 @@ class BloodTableSeeder extends Seeder
         $bgs = ['O-', 'O+', 'A+', 'A-', 'B+', 'B-', 'AB+', 'AB-'];
 
         foreach($bgs as  $bg){
-            type__bloods::create(['Name' => $bg]);
+            Type_Blood::create(['Name' => $bg]);
         }
     }
 }

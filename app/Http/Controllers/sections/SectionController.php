@@ -4,8 +4,13 @@ use App\Http\Controllers\Controller;
 use App\Models\Classroom;
 use App\Models\Grade;
 use App\Models\Section;
+use App\Models\Teacher;
 use Illuminate\Http\Request;
 use App\Http\Requests\StoreSections;
+
+
+
+
 
 class SectionController extends Controller
 {
@@ -18,13 +23,18 @@ class SectionController extends Controller
   public function index()
   {
 
-    $Grades = Grade::with(['Sections'])->get();
+    // $teachers = Teacher::findOrFail(2);
 
-    $list_Grades = Grade::all();
+    // return $teachers->Sections;
 
-    return view('pages.Sections.Sections',compact('Grades','list_Grades'));
 
-  }
+   $Grades = Grade::with(['Sections'])->get();
+   $list_Grades = Grade::all();
+   $teachers = Teacher::all();
+   return view('pages.Sections.Sections',compact('Grades','list_Grades','teachers'));
+
+ }
+
 
   /**
    * Store a newly created resource in storage.
@@ -44,6 +54,8 @@ class SectionController extends Controller
       $Sections->Class_id = $request->Class_id;
       $Sections->Status = 1;
       $Sections->save();
+      $Sections->teachers()->attach($request->teacher_id);
+
       toastr()->success(trans('messages.success'));
 
       return redirect()->route('Sections.index');
