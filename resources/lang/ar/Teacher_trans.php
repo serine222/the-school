@@ -13,5 +13,8 @@ return [
     'Gender'=>'النوع',
     'Joining_Date'=>'تاريخ التعين',
     'Address'=>'العنوان',
+    'Select_teacher'=>'تحديد المعلم',
+
+
 
 ];

@@ -13,4 +13,6 @@ return [
     'Gender'=>'Gender',
     'Joining_Date'=>'Joining_Date',
     'Address'=>'Address',
+    'Select_teacher'=>'Select teacher',
+
 ];
