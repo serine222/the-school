@@ -12,9 +12,12 @@ return [
     'classes'=>'الصفوف',
     'List_classes'=>'قائمة الصفوف الدراسية',
     'sections'=>'الاقسام',
+    'List_sections'=>'قائمة الاقسام الدراسية',
     'students'=>'الطلاب',
+    'add_student'=>'اضافة طالب جديد',
+    'list_students'=>'قائمة الطلاب',
     'Teachers'=>'المعلمين',
-    'Parents'=>'اولياء الامور',
+    'List_Teachers' => 'قائمة المعلمين',
     'Accounts'=>'الحسابات',
     'Attendance'=>'الحضور والغياب',
     'Exams'=>'الامتحانات',
@@ -23,7 +26,7 @@ return [
     'Settings'=>'الاعدادات',
     'Users'=>'المستخدمين',
     'Copyright' => 'جميع الحقوق محفوظة ',
-    'Name_Programer' => 'سهيلة سرين'
+    'Name_Programer' => 'سرين سهيلة'
 
 
 ];

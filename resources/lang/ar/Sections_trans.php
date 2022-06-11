@@ -1,6 +1,7 @@
 <?php
 
 return [
+
     'title_page' => 'الاقسام',
     'List_Grade' => 'List_Grade',
     'add_section' => 'اضافة قسم',
@@ -15,6 +16,7 @@ return [
     'submit' => 'حفظ البيانات',
     'Name_Section'=>'اسم القسم',
     'Name_Class'=>'اسم الصف',
+    'Name_Teacher'=>'اسم المعلم',
     'Status'=>'الحالة',
     'Status_Section_AC'=>'نشط',
     'Status_Section_No'=>'غير نشط',
@@ -27,6 +29,5 @@ return [
     'Edit'=>'تعديل',
     'Delete'=>'حذف',
     'Close' => 'اغلاق',
-
 
 ];
