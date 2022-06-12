@@ -35,7 +35,7 @@ class TeacherRepository implements TeacherRepositoryInterface{
             toastr()->success(trans('messages.success'));
             return redirect()->route('Teachers.create');
         }
-        catch (Exception $e) {
+        catch (\Exception $e) {
             return redirect()->back()->with(['error' => $e->getMessage()]);
         }
 
@@ -63,7 +63,7 @@ class TeacherRepository implements TeacherRepositoryInterface{
             toastr()->success(trans('messages.Update'));
             return redirect()->route('Teachers.index');
         }
-        catch (Exception $e) {
+        catch (\Exception $e) {
             return redirect()->back()->with(['error' => $e->getMessage()]);
         }
     }

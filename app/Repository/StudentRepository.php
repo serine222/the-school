@@ -1,34 +1,36 @@
 <?php
 
 namespace App\Repository;
+
 use App\Models\Classroom;
 use App\Models\Gender;
 use App\Models\Grade;
 
 use App\Models\Section;
 use App\Models\Student;
+use App\Models\Image;
 use App\Models\Type_Blood;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 
 
-class StudentRepository implements StudentRepositoryInterface{
+class StudentRepository implements StudentRepositoryInterface
+{
 
 
     public function Get_Student()
     {
         $students = Student::all();
-        return view('pages.Students.index',compact('students'));
+        return view('pages.Students.index', compact('students'));
     }
 
     public function Edit_Student($id)
     {
         $data['Grades'] = Grade::all();
-
         $data['Genders'] = Gender::all();
-
         $data['bloods'] = Type_Blood::all();
         $Students =  Student::findOrFail($id);
-        return view('pages.Students.edit',$data,compact('Students'));
+        return view('pages.Students.edit', $data, compact('Students'));
     }
 
     public function Update_Student($request)
@@ -54,30 +56,33 @@ class StudentRepository implements StudentRepositoryInterface{
     }
 
 
-    public function Create_Student(){
+    public function Create_Student()
+    {
 
-       $data['my_classes'] = Grade::all();
-       $data['Genders'] = Gender::all();
-       $data['bloods'] = Type_Blood::all();
-       return view('pages.Students.add',$data);
-
+        $data['my_classes'] = Grade::all();
+        $data['Genders'] = Gender::all();
+        $data['bloods'] = Type_Blood::all();
+        return view('pages.Students.add', $data);
     }
 
-    public function Get_classrooms($id){
+    public function Get_classrooms($id)
+    {
 
         $list_classes = Classroom::where("Grade_id", $id)->pluck("Name_Class", "id");
         return $list_classes;
-
     }
 
     //Get Sections
-    public function Get_Sections($id){
+    public function Get_Sections($id)
+    {
 
         $list_sections = Section::where("Class_id", $id)->pluck("Name_Section", "id");
         return $list_sections;
     }
 
-    public function Store_Student($request){
+    public function Store_Student($request)
+    {
+        DB::beginTransaction();
 
         try {
             $students = new Student();
@@ -94,23 +99,38 @@ class StudentRepository implements StudentRepositoryInterface{
 
             $students->academic_year = $request->academic_year;
             $students->save();
+
+
+            // insert img
+            if ($request->hasfile('photos')) {
+                foreach ($request->file('photos') as $file) {
+                    $name = $file->getClientOriginalName();
+                    $file->storeAs('attachments/students/'.$students->name, $file->getClientOriginalName(), 'upload_attachments');
+                       // attachments/students/'.$students->name =مكان الحفظ
+
+                       // insert in image_table
+                    $images = new Image();
+                    $images->filename = $name;
+                    $images->imageable_id = $students->id;
+                    $images->imageable_type = 'App\Models\Student';
+                    $images->save();
+                }
+            }
+            DB::commit(); // insert data
+
             toastr()->success(trans('messages.success'));
             return redirect()->route('Students.create');
-        }
-
-        catch (\Exception $e){
+        } catch (\Exception $e) {
+            DB::rollBack();
             return redirect()->back()->withErrors(['error' => $e->getMessage()]);
         }
-
     }
 
     public function Delete_Student($request)
     {
 
-        Student::destroy($request->id);
+        Student::findOrFail($request->id)->delete();
         toastr()->error(trans('messages.Delete'));
         return redirect()->route('Students.index');
     }
-
-
 }

@@ -31,7 +31,7 @@ class StudentController extends Controller
 
     public function store(StoreStudentsRequest $request)
     {
-       return $this->Student->Store_Student($request);
+        return $this->Student->Store_Student($request);
     }
 
 
@@ -44,7 +44,7 @@ class StudentController extends Controller
 
     public function update(StoreStudentsRequest $request)
     {
-        return $this->Student->Edit_Student($id);
+        return $this->Student->Edit_Student($request);
     }
 
 
@@ -55,12 +55,11 @@ class StudentController extends Controller
 
     public function Get_classrooms($id)
     {
-       return $this->Student->Get_classrooms($id);
+        return $this->Student->Get_classrooms($id);
     }
 
     public function Get_Sections($id)
     {
         return $this->Student->Get_Sections($id);
     }
-
 }

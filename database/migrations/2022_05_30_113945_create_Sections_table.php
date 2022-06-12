@@ -14,8 +14,8 @@ class CreateSectionsTable extends Migration
      */
     public function up()
     {
-        Schema::create('Sections', function (Blueprint $table) {
-            $table->increments('id');
+        Schema::create('sections', function (Blueprint $table) {
+            $table->id();
             $table->string('Name_Section');
             $table->integer('Status');
             $table->bigInteger('Grade_id')->unsigned();
@@ -31,6 +31,6 @@ class CreateSectionsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('Sections');
+        Schema::dropIfExists('sections');
     }
 }

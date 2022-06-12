@@ -3,6 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Schema;
 
 class CreateForeignKeys extends Migration {
 
@@ -18,10 +19,6 @@ class CreateForeignKeys extends Migration {
                 ->onDelete('cascade');
         });
 
-            Schema::table('sections', function(Blueprint $table) {
-                $table->foreign('Class_id')->references('id')->on('Classrooms')
-                    ->onDelete('cascade');
-            });
 
 	}
 
