@@ -11,6 +11,8 @@ interface StudentRepositoryInterface{
     // Edit_Student
     public function Edit_Student($id);
 
+    public function Show_Student($id);
+
     //Update_Student
     public function Update_Student($request);
 
@@ -29,6 +31,12 @@ interface StudentRepositoryInterface{
     //Store_Student
     public function Store_Student($request);
 
+    public function Upload_attachment($request);
+
+    //Download_attachment
+    public function Download_attachment($studentsname,$filename);
+
+    public function Delete_attachment($request);
+
+
 }
-
-

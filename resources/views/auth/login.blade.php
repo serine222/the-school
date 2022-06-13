@@ -8,7 +8,7 @@
     <meta name="description" content="Webmin - Bootstrap 4 & Angular 5 Admin Dashboard Template" />
     <meta name="author" content="potenzaglobalsolutions.com" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <title>برنامج مورا سوفت لادارة المدارس</title>
+    <title>المدرسة الخاصة نخبة الستقبل </title>
 
     <!-- Favicon -->
     <link rel="shortcut icon" href="images/favicon.ico" />
@@ -46,9 +46,8 @@
                     <div class="col-lg-4 col-md-6 login-fancy-bg bg"
                         style="background-image: url(images/login-inner-bg.jpg);">
                         <div class="login-fancy">
-                            <h2 class="text-white mb-20">Hello world!</h2>
-                            <p class="mb-20 text-white">Create tailor-cut websites with the exclusive multi-purpose
-                                responsive template along with powerful features.</p>
+                            <h2 class="text-white mb-20">مرحبا بك </h2>
+                            <p class="mb-20 text-white">برنامج المدرسة الخاصة نخبة المستقبل للتعليم عن بعد </p>
                             <ul class="list-unstyled  pos-bot pb-30">
                                 <li class="list-inline-item"><a class="text-white" href="#"> Terms of Use</a> </li>
                                 <li class="list-inline-item"><a class="text-white" href="#"> Privacy Policy</a></li>

@@ -39,6 +39,11 @@ class Student extends Model
     {
         return $this->belongsTo('App\Models\Section', 'section_id');
     }
+
+    public function type__blood()
+    {
+        return $this->belongsTo('App\Models\Type_Blood', 'blood_id');
+    }
  // علاقة بين الطلاب والصور لجلب اسم الصور  في جدول الطلاب
     public function images()
     {

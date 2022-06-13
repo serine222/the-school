@@ -2,8 +2,8 @@
 
 return [
 
-    'title_page' => 'الصفوف الدراسية',
-    'List_classes' => 'قائمة الصفوف الدراسية',
+    'title_page' => 'السنوات الدراسية',
+    'List_classes' => 'قائمة السنوات الدراسية',
     'add_class' => 'اضافة صف',
     'edit_class'=> 'تعديل صف',
     'delete_class'=> 'حذف صف',
