@@ -54,10 +54,8 @@ Route::group(
 
             Route::resource('Sections', 'SectionController');
 
-<<<<<<< HEAD
             Route::get('/classes/{id}', 'SectionController@getclasses');
         });
-=======
         Route::get('/classes/{id}', 'SectionController@getclasses');
 
     });
@@ -80,22 +78,7 @@ Route::group(
     Route::resource('Attendance', 'AttendanceController');
 });
 
-});
->>>>>>> 28eda57 (Students_Promotions_managemen)
 
-        //==============================Teachers============================
-        Route::group(['namespace' => 'Teachers'], function () {
-            Route::resource('Teachers', 'TeacherController');
-        });
 
-        //==============================Students============================
-        Route::group(['namespace' => 'Students'], function () {
-            Route::resource('Students', 'StudentController');
-            Route::get('/Get_classrooms/{id}', 'StudentController@Get_classrooms');
-            Route::get('/Get_Sections/{id}', 'StudentController@Get_Sections');
-            Route::post('Upload_attachment', 'StudentController@Upload_attachment')->name('Upload_attachment');
-            Route::get('Download_attachment/{studentname}/{filename}', 'StudentController@Download_attachment')->name('Download_attachment');
-            Route::post('Delete_attachment', 'StudentController@Delete_attachment')->name('Delete_attachment');
-        });
-    }
-);
+
+

@@ -43,23 +43,19 @@ class Student extends Model
         return $this->belongsTo('App\Models\Section', 'section_id');
     }
 
-<<<<<<< HEAD
+// علاقة بين الطلاب وفصيلة الدم لجلب اسم فصيلة الدم  في جدول الطلاب
     public function type__blood()
     {
         return $this->belongsTo('App\Models\Type_Blood', 'blood_id');
     }
+
  // علاقة بين الطلاب والصور لجلب اسم الصور  في جدول الطلاب
     public function images()
     {
         return $this->morphMany('App\Models\Image', 'imageable');
     }
-}
-=======
-     // علاقة بين الطلاب والصور لجلب اسم الصور  في جدول الطلاب
-     public function images()
-     {
-         return $this->morphMany('App\Models\Image', 'imageable');
-     }
+
+
 
       // علاقة بين جدول الطلاب وجدول الحضور والغياب
     public function attendance()
@@ -69,10 +65,8 @@ class Student extends Model
 
 
 
-    public function Type_Blood()
-    {
-        return $this->belongsTo('App\Models\Type_Blood', 'blood_id');
-    }
-
 }
->>>>>>> 28eda57 (Students_Promotions_managemen)
+
+
+
+

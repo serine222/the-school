@@ -11,10 +11,8 @@ interface StudentRepositoryInterface{
     // Edit_Student
     public function Edit_Student($id);
 
-<<<<<<< HEAD
-=======
+
     // Show_Student
->>>>>>> 28eda57 (Students_Promotions_managemen)
     public function Show_Student($id);
 
     //Update_Student
@@ -35,22 +33,16 @@ interface StudentRepositoryInterface{
     //Store_Student
     public function Store_Student($request);
 
-<<<<<<< HEAD
-=======
-    //Upload_attachment
->>>>>>> 28eda57 (Students_Promotions_managemen)
+   // Upload_attachment
+
     public function Upload_attachment($request);
 
-    //Download_attachment
+   // Download_attachment
     public function Download_attachment($studentsname,$filename);
 
-<<<<<<< HEAD
+
+   // Delete_attachment
     public function Delete_attachment($request);
 
 
-=======
-    //Delete_attachment
-    public function Delete_attachment($request);
-
->>>>>>> 28eda57 (Students_Promotions_managemen)
 }

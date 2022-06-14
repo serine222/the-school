@@ -25,13 +25,7 @@ return [
     'list_Graduate'=>'قائمة التخرجات',
     'Teachers'=>'المعلمين',
     'List_Teachers' => 'قائمة المعلمين',
-<<<<<<< HEAD
-=======
-    'Parents'=>'اولياء الامور',
-    'List_Parents'=>'قائمة اولياء الامور',
-    'Add_Parent'=>'اضافة ولي امر',
-    'Accounts'=>'الحسابات',
->>>>>>> 28eda57 (Students_Promotions_managemen)
+
     'Attendance'=>'الحضور والغياب',
     // 'Exams'=>'الامتحانات',
     // 'library'=>'المكتبة',
@@ -40,11 +34,11 @@ return [
     'Name_Programer' => 'سرين سهيلة',
     'Users'=>'المستخدمين',
     'Copyright' => 'جميع الحقوق محفوظة ',
-<<<<<<< HEAD
+
     'Name_Programer' => 'سيوسيو سهيلة رقيق سيرين'
-=======
 
 
->>>>>>> 28eda57 (Students_Promotions_managemen)
+
+
 
 ];
