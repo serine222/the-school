@@ -70,7 +70,7 @@
                                 <div class="form-group">
                                     <label for="gender">{{trans('Students_trans.gender')}} : <span class="text-danger">*</span></label>
                                     <select class="custom-select mr-sm-2" name="gender_id">
-                                        <option selected disabled>{{trans('Parent_trans.Choose')}}...</option>
+                                        <option selected disabled>{{trans('Students_trans.Choose')}}...</option>
                                         @foreach($Genders as $Gender)
                                             <option value="{{$Gender->id}}" {{$Gender->id == $Students->gender_id ? 'selected' : ""}}>{{ $Gender->Name }}</option>
                                         @endforeach
@@ -79,11 +79,12 @@
                             </div>
 
 
+
                             <div class="col-md-3">
                                 <div class="form-group">
                                     <label for="bg_id">{{trans('Students_trans.blood_type')}} : </label>
                                     <select class="custom-select mr-sm-2" name="blood_id">
-                                        <option selected disabled>{{trans('Parent_trans.Choose')}}...</option>
+                                        <option selected disabled>{{trans('Students_trans.Choose')}}...</option>
                                         @foreach($bloods as $bg)
                                             <option value="{{ $bg->id }}" {{$bg->id == $Students->blood_id ? 'selected' : ""}}>{{ $bg->Name }}</option>
                                         @endforeach
@@ -106,7 +107,7 @@
                                 <div class="form-group">
                                     <label for="Grade_id">{{trans('Students_trans.Grade')}} : <span class="text-danger">*</span></label>
                                     <select class="custom-select mr-sm-2" name="Grade_id">
-                                        <option selected disabled>{{trans('Parent_trans.Choose')}}...</option>
+                                        <option selected disabled>{{trans('Students_trans.Choose')}}...</option>
                                         @foreach($Grades as $Grade)
                                             <option value="{{ $Grade->id }}" {{$Grade->id == $Students->Grade_id ? 'selected' : ""}}>{{ $Grade->Name }}</option>
                                         @endforeach
@@ -138,7 +139,7 @@
                             <div class="form-group">
                                 <label for="academic_year">{{trans('Students_trans.academic_year')}} : <span class="text-danger">*</span></label>
                                 <select class="custom-select mr-sm-2" name="academic_year">
-                                    <option selected disabled>{{trans('Parent_trans.Choose')}}...</option>
+                                    <option selected disabled>{{trans('Students_trans.Choose')}}...</option>
                                     @php
                                         $current_year = date("Y");
                                     @endphp
@@ -173,7 +174,7 @@
                         success: function (data) {
                             $('select[name="Classroom_id"]').empty();
                             $.each(data, function (key, value) {
-                                $('select[name="Classroom_id"]').append('<option selected disabled >{{trans('Parent_trans.Choose')}}...</option>');
+                                $('select[name="Classroom_id"]').append('<option selected disabled >{{trans('Students_trans.Choose')}}...</option>');
                                 $('select[name="Classroom_id"]').append('<option value="' + key + '">' + value + '</option>');
                             });
 

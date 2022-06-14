@@ -4,9 +4,12 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Spatie\Translatable\HasTranslations;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Student extends Model
 {
+    use SoftDeletes;
+
     use HasTranslations;
     public $translatable = ['name'];
     protected $guarded =[];
@@ -40,6 +43,7 @@ class Student extends Model
         return $this->belongsTo('App\Models\Section', 'section_id');
     }
 
+<<<<<<< HEAD
     public function type__blood()
     {
         return $this->belongsTo('App\Models\Type_Blood', 'blood_id');
@@ -50,3 +54,25 @@ class Student extends Model
         return $this->morphMany('App\Models\Image', 'imageable');
     }
 }
+=======
+     // علاقة بين الطلاب والصور لجلب اسم الصور  في جدول الطلاب
+     public function images()
+     {
+         return $this->morphMany('App\Models\Image', 'imageable');
+     }
+
+      // علاقة بين جدول الطلاب وجدول الحضور والغياب
+    public function attendance()
+    {
+        return $this->hasMany('App\Models\Attendance', 'student_id');
+    }
+
+
+
+    public function Type_Blood()
+    {
+        return $this->belongsTo('App\Models\Type_Blood', 'blood_id');
+    }
+
+}
+>>>>>>> 28eda57 (Students_Promotions_managemen)

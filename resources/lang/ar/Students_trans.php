@@ -2,13 +2,13 @@
 
 return [
 
-
     'personal_information' => 'المعلومات الشخصية',
     'name' => 'اسم الطالب',
     'name_ar' => 'الاسم باللغة العربية',
     'name_en' => 'الاسم باللغة الانجليزية',
     'email' => 'البريد الالكتروني',
     'password' => 'كلمة المرور',
+<<<<<<< HEAD
     'gender' => 'النوع',
     'blood_type' => 'فصلية الدم',
     'Date_of_Birth' => 'تاريخ الميلاد',
@@ -20,6 +20,21 @@ return [
     'Processes' => 'العمليات',
     'submit' => 'تاكيد',
     'Close' => 'اغلاق',
+=======
+     'gender' => 'النوع',
+     'Nationality' => 'الجنسية',
+     'blood_type' => 'فصلية الدم',
+     'Date_of_Birth' => 'تاريخ الميلاد',
+     'Student_information' => 'معلومات الطالب',
+     'Grade' => 'المرحلة الدراسية',
+     'classrooms' => 'الصف الدراسي',
+     'section' => 'القسم',
+     'parent' => 'ولي الامر',
+     'academic_year' => 'السنة الدراسية',
+     'Processes' => 'العمليات',
+     'submit' => 'تاكيد',
+     'Close' => 'اغلاق',
+>>>>>>> 28eda57 (Students_Promotions_managemen)
     'Attachments' => 'المرفقات',
     'Student_details' => 'معلومات الطالب',
     'Deleted_Student' => 'حذف بيانات الطالب',
@@ -30,6 +45,11 @@ return [
     'created_at' => 'تاريخ الاضافة',
     'Download' => 'تحميل',
     'delete' => 'حذف',
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 28eda57 (Students_Promotions_managemen)
 
 
 

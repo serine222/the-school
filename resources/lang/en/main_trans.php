@@ -16,14 +16,15 @@ return [
     'students'=>'Students',
     'add_student'=>'Add student',
     'list_students'=>'list Students',
+    'Students_Promotions'=>'Students Promotions',
     'information_student'=>'Information Students',
     'Students_upgrade'=>'Students Upgrade',
     'Graduate_students'=>'Graduate Students',
     'Teachers'=>'Teachers',
     'List_Teachers' => 'List Teachers',
-
-
-
+    'Parents'=>'Parents',
+    'Add_Parent'=>'Add Parent',
+    'List_Parents'=>'List Parents',
     'Accounts'=>'Accounts',
     'Attendance'=>'Attendance',
     'Exams'=>'Exams',
@@ -32,7 +33,7 @@ return [
     'Settings'=>'Settings',
     'Users'=>'Users',
     'Copyright' => 'Copyright',
-    'Name_Programer' => 'serine souhila'
+    'Name_Programer' => 'Serine souhila'
 
 
 ];

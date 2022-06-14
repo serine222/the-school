@@ -1,4 +1,6 @@
 <?php
+
+
 use App\Models\Type_Blood;
 use Illuminate\Database\seeder;
 use Illuminate\Support\Facades\DB;

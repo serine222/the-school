@@ -5,7 +5,7 @@ namespace App\Repository;
 use App\Models\Classroom;
 use App\Models\Gender;
 use App\Models\Grade;
-
+use App\Models\Image;
 use App\Models\Section;
 use App\Models\Student;
 use App\Models\Image;
@@ -65,6 +65,7 @@ class StudentRepository implements StudentRepositoryInterface
         return view('pages.Students.add', $data);
     }
 
+<<<<<<< HEAD
 
 
     public function Show_Student($id)
@@ -76,6 +77,16 @@ class StudentRepository implements StudentRepositoryInterface
 
     public function Get_classrooms($id)
     {
+=======
+    public function Show_Student($id)
+    {
+        $Student = Student::findorfail($id);
+        return view('pages.Students.show',compact('Student'));
+    }
+
+
+    public function Get_classrooms($id){
+>>>>>>> 28eda57 (Students_Promotions_managemen)
 
         $list_classes = Classroom::where("Grade_id", $id)->pluck("Name_Class", "id");
         return $list_classes;
@@ -93,22 +104,24 @@ class StudentRepository implements StudentRepositoryInterface
     {
         DB::beginTransaction();
 
+
+        DB::beginTransaction();
+
         try {
             $students = new Student();
             $students->name = ['en' => $request->name_en, 'ar' => $request->name_ar];
             $students->email = $request->email;
             $students->password = Hash::make($request->password);
             $students->gender_id = $request->gender_id;
-
             $students->blood_id = $request->blood_id;
             $students->Date_Birth = $request->Date_Birth;
             $students->Grade_id = $request->Grade_id;
             $students->Classroom_id = $request->Classroom_id;
             $students->section_id = $request->section_id;
-
             $students->academic_year = $request->academic_year;
             $students->save();
 
+<<<<<<< HEAD
 
             // insert img
             if ($request->hasfile('photos')) {
@@ -121,16 +134,40 @@ class StudentRepository implements StudentRepositoryInterface
                     $images = new Image();
                     $images->filename = $name;
                     $images->imageable_id = $students->id;
+=======
+            // insert img
+            if($request->hasfile('photos'))
+            {
+                foreach($request->file('photos') as $file)
+                {
+                    $name = $file->getClientOriginalName();
+                    $file->storeAs('attachments/students/'.$students->name, $file->getClientOriginalName(),'upload_attachments');
+
+                    // insert in image_table
+                    $images= new Image();
+                    $images->filename=$name;
+                    $images->imageable_id= $students->id;
+>>>>>>> 28eda57 (Students_Promotions_managemen)
                     $images->imageable_type = 'App\Models\Student';
                     $images->save();
                 }
             }
             DB::commit(); // insert data
+<<<<<<< HEAD
 
             toastr()->success(trans('messages.success'));
             return redirect()->route('Students.create');
         } catch (\Exception $e) {
             DB::rollBack();
+=======
+            toastr()->success(trans('messages.success'));
+            return redirect()->route('Students.create');
+
+        }
+
+        catch (\Exception $e){
+            DB::rollback();
+>>>>>>> 28eda57 (Students_Promotions_managemen)
             return redirect()->back()->withErrors(['error' => $e->getMessage()]);
         }
     }
@@ -162,6 +199,40 @@ class StudentRepository implements StudentRepositoryInterface
     public function Download_attachment($studentsname, $filename)
     {
         return response()->download(public_path('attachments/students/' . $studentsname . '/' . $filename));
+    }
+
+    public function Upload_attachment($request)
+    {
+        foreach($request->file('photos') as $file)
+        {
+            $name = $file->getClientOriginalName();
+            $file->storeAs('attachments/students/'.$request->student_name, $file->getClientOriginalName(),'upload_attachments');
+
+            // insert in image_table
+            $images= new image();
+            $images->filename=$name;
+            $images->imageable_id = $request->student_id;
+            $images->imageable_type = 'App\Models\Student';
+            $images->save();
+        }
+        toastr()->success(trans('messages.success'));
+        return redirect()->route('Students.show',$request->student_id);
+    }
+
+    public function Download_attachment($studentsname, $filename)
+    {
+        return response()->download(public_path('attachments/students/'.$studentsname.'/'.$filename));
+    }
+
+    public function Delete_attachment($request)
+    {
+        // Delete img in server disk
+        Storage::disk('upload_attachments')->delete('attachments/students/'.$request->student_name.'/'.$request->filename);
+
+        // Delete in data
+        image::where('id',$request->id)->where('filename',$request->filename)->delete();
+        toastr()->error(trans('messages.Delete'));
+        return redirect()->route('Students.show',$request->student_id);
     }
 
 

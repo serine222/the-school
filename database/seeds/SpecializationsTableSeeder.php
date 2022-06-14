@@ -1,9 +1,8 @@
 <?php
+
 use App\Models\Specialization;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
-use CodeZero\UniqueTranslation\UniqueTranslationRule;
-
 
 class SpecializationsTableSeeder extends Seeder
 {

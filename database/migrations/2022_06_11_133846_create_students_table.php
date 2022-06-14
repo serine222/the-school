@@ -29,7 +29,7 @@ class CreateStudentsTable extends Migration
             $table->foreign('Classroom_id')->references('id')->on('Classrooms')->onDelete('cascade');
             $table->bigInteger('section_id')->unsigned();
             $table->foreign('section_id')->references('id')->on('sections')->onDelete('cascade');
-
+            $table->softDeletes();
             $table->string('academic_year');
             $table->timestamps();
         });
@@ -43,5 +43,6 @@ class CreateStudentsTable extends Migration
     public function down()
     {
         Schema::dropIfExists('students');
+
     }
 }
