@@ -58,7 +58,7 @@ Route::group(
         });
         Route::get('/classes/{id}', 'SectionController@getclasses');
 
-    });
+
 
   //==============================Teachers============================
   Route::group(['namespace' => 'Teachers'], function () {
@@ -79,6 +79,6 @@ Route::group(
 });
 
 
-
+});
 
 

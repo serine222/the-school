@@ -14,11 +14,9 @@ class CreateSectionsTable extends Migration
      */
     public function up()
     {
-<<<<<<< HEAD
+
         Schema::create('sections', function (Blueprint $table) {
-=======
-        Schema::create('Sections', function (Blueprint $table) {
->>>>>>> 28eda57 (Students_Promotions_managemen)
+
             $table->id();
             $table->string('Name_Section');
             $table->integer('Status');

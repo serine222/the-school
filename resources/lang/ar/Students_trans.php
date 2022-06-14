@@ -34,7 +34,12 @@ return [
     'Download' => 'تحميل',
     'delete' => 'حذف',
 
-
+    'Next' => 'التالي',
+    'Back' => 'السابق',
+    'Finish' => 'تاكيد',
+    'Choose' => 'اختيار من القائمة',
+    'Attachments' => 'المرفقات',
+    'Processes' => 'العمليات',
 
 
 ];

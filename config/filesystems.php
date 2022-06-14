@@ -48,11 +48,9 @@ return [
             'root' => storage_path('app'),
         ],
 
-<<<<<<< HEAD
-        'upload_attachments'=>[
-=======
+
         'upload_attachments' => [
->>>>>>> 28eda57 (Students_Promotions_managemen)
+
             'driver' => 'local',
             'root' => public_path('/'),
             'url' => env('APP_URL').'/storage',

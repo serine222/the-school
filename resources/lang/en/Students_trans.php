@@ -31,6 +31,14 @@ return [
     'Download' => 'Download',
     'delete' => 'Delete',
 
+    'Next' => 'Next',
+    'Back' => 'Back',
+    'Finish' => 'Finish',
+    'Choose' => 'Choose',
+    'Attachments' => 'Attachments',
+    'Processes' => 'Processes',
+
+
 
 ];
 
