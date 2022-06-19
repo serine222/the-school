@@ -20,13 +20,11 @@ Route::get('/', 'HomeController@index')->name('selection');
 
 Route::group(['namespace' => 'Auth'], function () {
 
-Route::get('/login/{type}','LoginController@loginForm')->middleware('guest')->name('login.show');
+    Route::get('/login/{type}', 'LoginController@loginForm')->middleware('guest')->name('login.show');
 
-Route::post('/login','LoginController@login')->name('login');
+    Route::post('/login', 'LoginController@login')->name('login');
 
-Route::get('/logout/{type}', 'LoginController@logout')->name('logout');
-
-
+    Route::get('/logout/{type}', 'LoginController@logout')->name('logout');
 });
 //==============================Translate all pages============================
 Route::group(
@@ -37,9 +35,9 @@ Route::group(
     function () {
 
         //==============================dashboard============================
- Route::get('/dashboard', 'HomeController@dashboard')->name('dashboard');
+        Route::get('/dashboard', 'HomeController@dashboard')->name('dashboard');
 
-//  Livewire::component('calendar', Calendar::class);
+        //  Livewire::component('calendar', Calendar::class);
 
 
         //==============================dashboard============================
@@ -68,26 +66,28 @@ Route::group(
 
 
 
-  //==============================Teachers============================
-  Route::group(['namespace' => 'Teachers'], function () {
-    Route::resource('Teachers', 'TeacherController');
-});
+        //==============================Teachers============================
+        Route::group(['namespace' => 'Teachers'], function () {
+            Route::resource('Teachers', 'TeacherController');
+        });
 
- //==============================Students============================
- Route::group(['namespace' => 'Students'], function () {
-    Route::resource('Students', 'StudentController');
-    Route::resource('online_classes', 'OnlineClasseController');
-    Route::resource('Graduated', 'GraduatedController');
-    Route::resource('Promotion', 'PromotionController');
-    Route::get('/Get_classrooms/{id}', 'StudentController@Get_classrooms');
-    Route::get('/Get_Sections/{id}', 'StudentController@Get_Sections');
-    Route::post('Upload_attachment', 'StudentController@Upload_attachment')->name('Upload_attachment');
-    Route::get('Download_attachment/{studentsname}/{filename}', 'StudentController@Download_attachment')->name('Download_attachment');
-    Route::post('Delete_attachment', 'StudentController@Delete_attachment')->name('Delete_attachment');
-    Route::resource('Attendance', 'AttendanceController');
-});
+        //==============================Students============================
+        Route::group(['namespace' => 'Students'], function () {
+            Route::resource('Students', 'StudentController');
+            Route::resource('online_classes', 'OnlineClasseController');
+            Route::get('/indirect', 'OnlineClasseController@indirectCreate')->name('indirect.create');
+            Route::post('/indirect', 'OnlineClasseController@storeIndirect')->name('indirect.store');
+            Route::resource('Graduated', 'GraduatedController');
+            Route::resource('Promotion', 'PromotionController');
+            Route::get('/Get_classrooms/{id}', 'StudentController@Get_classrooms');
+            Route::get('/Get_Sections/{id}', 'StudentController@Get_Sections');
+            Route::post('Upload_attachment', 'StudentController@Upload_attachment')->name('Upload_attachment');
+            Route::get('Download_attachment/{studentsname}/{filename}', 'StudentController@Download_attachment')->name('Download_attachment');
+            Route::post('Delete_attachment', 'StudentController@Delete_attachment')->name('Delete_attachment');
+            Route::resource('Attendance', 'AttendanceController');
+        });
 
-    //==============================Setting============================
-    Route::resource('settings', 'SettingController');
-
-});
+        //==============================Setting============================
+        Route::resource('settings', 'SettingController');
+    }
+);

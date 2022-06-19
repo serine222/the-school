@@ -131,9 +131,7 @@
                             <div class="clearfix"></div>
                         </a>
                         <ul id="Onlineclasses-icon" class="collapse" data-parent="#sidebarnav">
-                            <li> <a href="{{route('online_classes.index')}}">الاتصال المباشر مع زوم</a> </li>
-
-                            <li> <a href="weather-icon.html">الاتصال الغير مباشر مع زوم</a> </li>
+                            <li> <a href="{{route('online_classes.index')}}">حصص اونلاين</a> </li>
                         </ul>
                     </li>
 

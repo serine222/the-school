@@ -97,4 +97,3 @@ public function Delete_attachment(Request $request)
 
 
 }
-
