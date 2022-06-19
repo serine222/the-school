@@ -76,6 +76,7 @@ Route::group(
  //==============================Students============================
  Route::group(['namespace' => 'Students'], function () {
     Route::resource('Students', 'StudentController');
+    Route::resource('online_classes', 'OnlineClasseController');
     Route::resource('Graduated', 'GraduatedController');
     Route::resource('Promotion', 'PromotionController');
     Route::get('/Get_classrooms/{id}', 'StudentController@Get_classrooms');

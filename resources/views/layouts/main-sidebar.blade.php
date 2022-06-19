@@ -131,9 +131,9 @@
                             <div class="clearfix"></div>
                         </a>
                         <ul id="Onlineclasses-icon" class="collapse" data-parent="#sidebarnav">
-                            <li> <a href="fontawesome-icon.html">font Awesome</a> </li>
-                            <li> <a href="themify-icons.html">Themify icons</a> </li>
-                            <li> <a href="weather-icon.html">Weather icons</a> </li>
+                            <li> <a href="{{route('online_classes.index')}}">الاتصال المباشر مع زوم</a> </li>
+
+                            <li> <a href="weather-icon.html">الاتصال الغير مباشر مع زوم</a> </li>
                         </ul>
                     </li>
 
