@@ -20984,8 +20984,8 @@ ul.list-unstyled li {
 .admin-header .navbar-brand {
   height: auto;
   padding: 9px 0; }
-  .admin-header .navbar-brand img {
-    height: 30px; }
+  /* .admin-header .navbar-brand img {
+    height: 30px; } */
 
 .admin-header .search .search-btn {
   color: #6c757d;

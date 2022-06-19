@@ -13,16 +13,21 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Auth::routes();
+//Auth::routes();
 
-Route::group(['middleware' => ['guest']], function () {
+Route::get('/', 'HomeController@index')->name('selection');
 
-    Route::get('/', function () {
-        return view('auth.login');
-    });
+
+Route::group(['namespace' => 'Auth'], function () {
+
+Route::get('/login/{type}','LoginController@loginForm')->middleware('guest')->name('login.show');
+
+Route::post('/login','LoginController@login')->name('login');
+
+Route::get('/logout/{type}', 'LoginController@logout')->name('logout');
+
+
 });
-
-
 //==============================Translate all pages============================
 Route::group(
     [
@@ -32,7 +37,10 @@ Route::group(
     function () {
 
         //==============================dashboard============================
-        Route::get('/dashboard', 'HomeController@index')->name('dashboard');
+ Route::get('/dashboard', 'HomeController@dashboard')->name('dashboard');
+
+//  Livewire::component('calendar', Calendar::class);
+
 
         //==============================dashboard============================
         Route::group(['namespace' => 'Grades'], function () {
@@ -56,7 +64,7 @@ Route::group(
 
             Route::get('/classes/{id}', 'SectionController@getclasses');
         });
-        Route::get('/classes/{id}', 'SectionController@getclasses');
+
 
 
 
@@ -78,7 +86,7 @@ Route::group(
     Route::resource('Attendance', 'AttendanceController');
 });
 
+    //==============================Setting============================
+    Route::resource('settings', 'SettingController');
 
 });
-
-

@@ -11,8 +11,6 @@ class CreateClassroomsTable extends Migration {
 
 
             $table->id();
-
-
 			$table->string('Name_Class');
 			$table->bigInteger('Grade_id')->unsigned();
 			$table->timestamps();
