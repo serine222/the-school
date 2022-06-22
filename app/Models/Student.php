@@ -3,10 +3,9 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use Spatie\Translatable\HasTranslations;
 use Illuminate\Database\Eloquent\SoftDeletes;
- use Illuminate\Foundation\Auth\User as Authenticatable;
-
+use Illuminate\Foundation\Auth\User as Authenticatable;
+use Spatie\Translatable\HasTranslations;
 
 class Student extends Authenticatable
 {
@@ -14,7 +13,7 @@ class Student extends Authenticatable
 
     use HasTranslations;
     public $translatable = ['name'];
-    protected $guarded =[];
+    protected $guarded = [];
 
     // علاقة بين الطلاب والانواع لجلب اسم النوع في جدول الطلاب
 
@@ -45,30 +44,17 @@ class Student extends Authenticatable
         return $this->belongsTo('App\Models\Section', 'section_id');
     }
 
-// علاقة بين الطلاب وفصيلة الدم لجلب اسم فصيلة الدم  في جدول الطلاب
-    public function type__blood()
-    {
-        return $this->belongsTo('App\Models\Type_Blood', 'blood_id');
-    }
 
- // علاقة بين الطلاب والصور لجلب اسم الصور  في جدول الطلاب
+    // علاقة بين الطلاب والصور لجلب اسم الصور  في جدول الطلاب
     public function images()
     {
         return $this->morphMany('App\Models\Image', 'imageable');
     }
 
-
-
-      // علاقة بين جدول الطلاب وجدول الحضور والغياب
+    
+    // علاقة بين جدول الطلاب وجدول الحضور والغياب
     public function attendance()
     {
         return $this->hasMany('App\Models\Attendance', 'student_id');
     }
-
-
-
 }
-
-
-
-

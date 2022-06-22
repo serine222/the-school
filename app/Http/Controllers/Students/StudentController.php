@@ -13,7 +13,7 @@ class StudentController extends Controller
     protected $Student;
 
     public function __construct(StudentRepositoryInterface $Student)
-    {
+    { 
         $this->Student = $Student;
     }
 
