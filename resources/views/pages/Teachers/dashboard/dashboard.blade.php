@@ -76,7 +76,7 @@
 
                 <div class="col-xl-6 col-lg-6 col-md-6 mb-30">
                     <div class="card card-statistics h-100">
-                        <div class="card-body"> 
+                        <div class="card-body">
                             <div class="clearfix">
                                 <div class="float-left">
                                     <span class="text-primary">
@@ -208,6 +208,8 @@
                                             </table>
                                         </div>
                                     </div>
+
+                                    
 
                                     {{--parents Table--}}
                                     {{-- <div class="tab-pane fade" id="parents" role="tabpanel" aria-labelledby="parents-tab">

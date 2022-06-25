@@ -3,6 +3,7 @@
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use App\Models\user;
+use Illuminate\Support\Facades\Hash;
 
 
 class UserSeeder extends Seeder

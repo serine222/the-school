@@ -13,7 +13,7 @@ class OnlineClasseController extends Controller
 
     public function index()
     {
-        $online_classes = online_classe ::all();
+        $online_classes = online_classe ::where('created_by',auth()->user()->email)->get();
         return view('pages.online_classes.index', compact('online_classes'));
     }
 
@@ -23,7 +23,7 @@ class OnlineClasseController extends Controller
     public function indirectCreate()
     {
         $Grades = Grade::all();
-        return view('pages.online_classes.indirect', compact('Grades'));
+       return view('pages.online_classes.indirect', compact('Grades'));
 
     }
 
@@ -41,8 +41,8 @@ class OnlineClasseController extends Controller
 
                 'Classroom_id' => $request->Classroom_id,
                 'section_id' => $request->section_id,
-                'user_id' => auth()->user()->id,
-                'meeting_id' => $request->meeting_id,
+                'created_by'=>auth()->user()->email,
+            'meeting_id' => $request->meeting_id,
                 'topic' => $request->topic,
                 'start_at' => $request->start_time,
                 'duration' => $request->duration,
@@ -87,5 +87,6 @@ class OnlineClasseController extends Controller
         catch (\Exception $e) {
             return redirect()->back()->with(['error' => $e->getMessage()]);
         }
-    }
+
+   }
 }

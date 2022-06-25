@@ -12,7 +12,8 @@ class CreateAttendancesTable extends Migration
      * @return void
      */
     public function up()
-    {     Schema::create('attendances', function (Blueprint $table) {
+    {
+        Schema::create('attendances', function (Blueprint $table) {
         $table->id();
         $table->foreignId('student_id')->references('id')->on('students')->onDelete('cascade');
         $table->foreignId('grade_id')->references('id')->on('Grades')->onDelete('cascade');
