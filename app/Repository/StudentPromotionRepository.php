@@ -14,13 +14,16 @@ class StudentPromotionRepository implements StudentPromotionRepositoryInterface
 {
 
     public function index()
+
     {
+
         $Grades = Grade::all();
         return view('pages.Students.promotion.index',compact('Grades'));
     }
 
     public function create()
     {
+
         $promotions = promotion::all();
         return view('pages.Students.promotion.management',compact('promotions'));
     }

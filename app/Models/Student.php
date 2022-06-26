@@ -51,10 +51,16 @@ class Student extends Authenticatable
         return $this->morphMany('App\Models\Image', 'imageable');
     }
 
-    
+
     // علاقة بين جدول الطلاب وجدول الحضور والغياب
     public function attendance()
     {
         return $this->hasMany('App\Models\Attendance', 'student_id');
+    }
+
+    // علاقة بين الطلاب وفصيلة الدم لجلب اسم فصيلة الدم  في جدول الطلاب
+    public function type__blood()
+    {
+        return $this->belongsTo('App\Models\Type_Blood', 'blood_id');
     }
 }

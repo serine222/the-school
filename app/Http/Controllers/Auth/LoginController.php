@@ -32,7 +32,6 @@ class LoginController extends Controller
     }
 
 
-
     public function loginForm($type){
 
         return view('auth.login',compact('type'));
@@ -43,9 +42,7 @@ class LoginController extends Controller
         if (Auth::guard($this->chekGuard($request))->attempt(['email' => $request->email, 'password' => $request->password])) {
            return $this->redirect($request);
         }
-else{
-    return redirect()->back()->with('message','تحقق من كلمة المرور او اسم المستخدم  ');
-}
+
     }
 
     public function logout(Request $request,$type)

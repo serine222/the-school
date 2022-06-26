@@ -13,18 +13,27 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
+
+
+
+
+
+
+
+
 //Auth::routes();
 
-Route::get('/', 'HomeController@index')->name('selection');
 
+Route::get('/', 'HomeController@index')->name('selection');
 
 Route::group(['namespace' => 'Auth'], function () {
 
     Route::get('/login/{type}', 'LoginController@loginForm')->middleware('guest')->name('login.show');
-
     Route::post('/login', 'LoginController@login')->name('login');
-
     Route::get('/logout/{type}', 'LoginController@logout')->name('logout');
+
+
 });
 //==============================Translate all pages============================
 Route::group(

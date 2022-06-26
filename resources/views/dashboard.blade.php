@@ -92,26 +92,7 @@
                         </div>
                     </div>
                 </div>
-                {{-- <div class="col-xl-3 col-lg-6 col-md-6 mb-30">
-                    <div class="card card-statistics h-100">
-                        <div class="card-body">
-                            <div class="clearfix">
-                                <div class="float-left">
-                                    <span class="text-success">
-                                        <i class="fas fa-user-tie highlight-icon" aria-hidden="true"></i>
-                                    </span>
-                                </div>
-                                <div class="float-right text-right">
-                                    <p class="card-text text-dark">عدد اولياء الامور</p>
-                                    <h4>{{\App\Models\My_Parent::count()}}</h4>
-                                </div>
-                            </div>
-                            <p class="text-muted pt-3 mb-0 mt-2 border-top">
-                                <i class="fas fa-binoculars mr-1" aria-hidden="true"></i><a href="{{route('add_parent')}}" target="_blank"><span class="text-danger">عرض البيانات</span></a>
-                            </p>
-                        </div>
-                    </div>
-                </div> --}}
+
                 <div class="col-xl-3 col-lg-6 col-md-6 mb-30">
                     <div class="card card-statistics h-100">
                         <div class="card-body">
@@ -161,17 +142,6 @@
                                                 </a>
                                             </li>
 
-                                            {{-- <li class="nav-item">
-                                                <a class="nav-link" id="parents-tab" data-toggle="tab" href="#parents"
-                                                   role="tab" aria-controls="parents" aria-selected="false">اولياء الامور
-                                                </a>
-                                            </li> --}}
-
-                                            {{-- <li class="nav-item">
-                                                <a class="nav-link" id="fee_invoices-tab" data-toggle="tab" href="#fee_invoices"
-                                                   role="tab" aria-controls="fee_invoices" aria-selected="false">الفواتير
-                                                </a>
-                                            </li> --}}
 
                                         </ul>
                                     </div>
@@ -247,37 +217,7 @@
                                         </div>
                                     </div>
 
-                                    {{--parents Table--}}
-                                    {{-- <div class="tab-pane fade" id="parents" role="tabpanel" aria-labelledby="parents-tab">
-                                        <div class="table-responsive mt-15">
-                                            <table style="text-align: center" class="table center-aligned-table table-hover mb-0">
-                                                <thead>
-                                                <tr  class="table-info text-danger">
-                                                    <th>#</th>
-                                                    {{-- <th>اسم ولي الامر</th>
-                                                    <th>البريد الالكتروني</th>
-                                                    <th>رقم الهوية</th>
-                                                    <th>رقم الهاتف</th>
-                                                    <th>تاريخ الاضافة</th>
-                                                </tr>
-                                                </thead>
-                                                <tbody>
-                                                @forelse(\App\Models\My_Parent::latest()->take(5)->get() as $parent)
-                                                    <tr>
-                                                        <td>{{$loop->iteration}}</td>
-                                                        <td>{{$parent->Name_Father}}</td>
-                                                        <td>{{$parent->email}}</td>
-                                                        <td>{{$parent->National_ID_Father}}</td>
-                                                        <td>{{$parent->Phone_Father}}</td>
-                                                        <td class="text-success">{{$parent->created_at}}</td>
-                                                        @empty
-                                                            <td class="alert-danger" colspan="8">لاتوجد بيانات</td>
-                                                    </tr>
-                                                @endforelse
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </div> --}}
+
 
                                     {{--sections Table--}}
                                     <div class="tab-pane fade" id="fee_invoices" role="tabpanel" aria-labelledby="fee_invoices-tab">
@@ -296,20 +236,7 @@
                                                     {{-- <th>تاريخ الاضافة</th> --}}
                                                 </tr>
                                                 </thead>
-                                           {{-- <tbody>
-                                                @forelse(\App\Models\Fee_invoice::latest()->take(10)->get() as $section)
-                                                    <tr>
-                                                         <td>{{$loop->iteration}}</td>
-                                                         <td>{{$section->invoice_date}}</td>
-                                                         <td>{{$section->My_classs->Name_Class}}</td>
-                                                        <td class="text-success">{{$section->created_at}}</td>
-                                                    </tr>
-                                                @empty
-                                                    <tr>
-                                                        <td class="alert-danger" colspan="9">لاتوجد بيانات</td>
-                                                    </tr>
-                                                @endforelse
-                                                </tbody> --}}
+
                                             </table>
                                         </div>
                                     </div>
