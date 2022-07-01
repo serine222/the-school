@@ -2,13 +2,13 @@
 @section('css')
     @toastr_css
 @section('title')
-    حصص اونلاين
+{{ trans('online_classes.online_class') }}
 @stop
 @endsection
 @section('page-header')
 <!-- breadcrumb -->
 @section('PageTitle')
-    حصص اونلاين
+{{ trans('online_classes.online_class') }}
 @stop
 <!-- breadcrumb -->
 @endsection
@@ -28,14 +28,15 @@
                                     <thead>
                                         <tr class="alert-success">
                                             <th>#</th>
-                                            <th>المرحلة</th>
-                                            <th>الصف</th>
-                                            <th>القسم</th>
-                                            <th>المعلم</th>
-                                            <th>عنوان الحصة</th>
-                                            <th>تاريخ البداية</th>
-                                            <th>وقت الحصة</th>
-                                            <th>رابط الحصة</th>
+                                            <th>{{ trans('online_classes.grade') }}</th>
+                                            <th>{{ trans('online_classes.classroom') }}</th>
+                                            <th>{{ trans('online_classes.section') }}</th>
+                                            <th>{{ trans('online_classes.teacher') }}</th>
+                                            <th>{{ trans('online_classes.subject') }}</th>
+                                            <th>{{ trans('online_classes.date_start') }}</th>
+                                            <th> {{ trans('online_classes.duration') }}</th>
+                                            <th> {{ trans('online_classes.link') }}</th>
+                                            <th>{{ trans('online_classes.Processes') }}</th>
 
                                         </tr>
                                     </thead>

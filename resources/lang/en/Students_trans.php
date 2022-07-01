@@ -70,4 +70,16 @@ return [
 
 
 
+    'online_education'=>'online education ',
+
+
+    'Compound-targets'=>'Goals',
+    'teacher'=>'Our expert teachers',
+
+
+    'p'=>'Raising and educating a generation that adheres to its religion and values, and to its homeland, distinguished by its morals and knowledge, productive with its work, effective in its surroundings, a leader in its community, living its time ',
+    'get-started'=>'get started',
+    'p1'=>'The first and basic principle in choosing a professor is to fear God, to be disciplined, and to have Islamic morals, grooming, behavior, and thoughts.',
+
+
 ];

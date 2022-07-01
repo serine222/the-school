@@ -49,12 +49,12 @@
 
 <section class="home" id="home">
 
-    <h1>online education</h1>
+    <h1>{{trans('Students_trans.online_education')}}</h1>
     <br>
     <br>
     <br>
 
-    <a href="{{ route('zoom.show') }}"><button class="btn1">get started</button></a>
+    <a href="{{ route('zoom.show') }}"><button class="btn1">{{trans('Students_trans.get-started')}}</button></a>
 
     <div class="shape"></div>
 
@@ -69,15 +69,18 @@
 
 
     <div class="content  col-sm-6">
-        <h3>why choose us?</h3>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam aperiam quaerat dolor voluptas nobis voluptates illum? Inventore voluptas dolore voluptates.</p>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex delectus ducimus dignissimos pariatur. Amet sed distinctio earum dolorum nulla, in obcaecati aliquid modi quos magni ducimus culpa nobis laudantium incidunt.</p>
-        <a href="#"><button class="btn1">learn more</button></a>
+        <h3>{{trans('Students_trans.Compound-targets')}}</h3>
+        <p> {{trans('Students_trans.p')}}</p>
+
+
     </div>
 
     <div class="image  col-sm-6">
         <img src="{{ URL::asset('assets/images/about-img.svg') }}" alt="avatar">
     </div>
+
+
+
 
 
 
@@ -87,11 +90,11 @@
 
 <section class="teacher" id="teacher">
 
-    <h1 class="heading">our expert teachers</h1>
+    <h1 class="heading">{{trans('Students_trans.teacher')}}</h1>
 
-    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. At non explicabo tempora modi, reprehenderit ratione sunt ea porro tenetur officiis alias sapiente praesentium voluptas cumque quo maiores dolores totam ex.</p>
+    <p>{{trans('Students_trans.p1')}}</p>
 
-    <a href="#"><button class="btn1">learn more</button></a>
+
 
     </section>
 

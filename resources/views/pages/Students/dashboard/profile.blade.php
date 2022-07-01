@@ -2,13 +2,13 @@
 @section('css')
     @toastr_css
     @section('title')
-        الملف الشخصي
+    {{trans('Teacher_trans.profile')}}
     @stop
 @endsection
 @section('page-header')
     <!-- breadcrumb -->
     @section('PageTitle')
-        الملف الشخصي
+    {{trans('Teacher_trans.profile')}}
     @stop
     <!-- breadcrumb -->
 @endsection
@@ -29,7 +29,7 @@
                                  class="rounded-circle img-fluid" style="width: 150px;">
                             <h5 style="font-family: Cairo" class="my-3">{{$information->name}}</h5>
                             <p class="text-muted mb-1">{{$information->email}}</p>
-                            <p class="text-muted mb-4">الطالب</p>
+                            <p class="text-muted mb-4">{{ trans('dashboard.Students') }}</p>
                         </div>
                     </div>
                 </div>
@@ -40,7 +40,7 @@
                                 @csrf
                                 <div class="row">
                                     <div class="col-sm-3">
-                                        <p class="mb-0">اسم المستخدم باللغة العربية</p>
+                                        <p class="mb-0">{{trans('Students_trans.name_ar')}}</p>
                                     </div>
                                     <div class="col-sm-9">
                                         <p class="text-muted mb-0">
@@ -53,7 +53,7 @@
                                 <hr>
                                 <div class="row">
                                     <div class="col-sm-3">
-                                        <p class="mb-0">اسم المستخدم باللغة الانجليزية</p>
+                                        <p class="mb-0"> {{trans('Students_trans.name_en')}}</p>
                                     </div>
                                     <div class="col-sm-9">
                                         <p class="text-muted mb-0">
@@ -66,7 +66,7 @@
                                 <hr>
                                 <div class="row">
                                     <div class="col-sm-3">
-                                        <p class="mb-0">كلمة المرور</p>
+                                        <p class="mb-0">{{trans('Students_trans.password')}}</p>
                                     </div>
                                     <div class="col-sm-9">
                                         <p class="text-muted mb-0">
@@ -74,11 +74,11 @@
                                         </p><br><br>
                                         <input type="checkbox" class="form-check-input" onclick="myFunction()"
                                                id="exampleCheck1">
-                                        <label class="form-check-label" for="exampleCheck1">اظهار كلمة المرور</label>
+                                        <label class="form-check-label" for="exampleCheck1">{{trans('Students_trans.show_password')}}</label>
                                     </div>
                                 </div>
                                 <hr>
-                                <button type="submit" class="btn btn-success">تعديل البيانات</button>
+                                <button type="submit" class="btn btn-success">{{trans('Students_trans.edit_data')}}</button>
                             </form>
                         </div>
                     </div>
