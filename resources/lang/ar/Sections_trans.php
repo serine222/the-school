@@ -3,7 +3,7 @@
 return [
 
     'title_page' => 'الاقسام',
-    'List_Grade' => 'List_Grade',
+    'List_Grade' => 'قائمة المراحل الدراسية',
     'add_section' => 'اضافة قسم',
     'edit_Section'=> 'تعديل قسم',
     'delete_Section'=> 'حذف قسم',
@@ -12,7 +12,7 @@ return [
     'Section_name_en' => 'اسم القسم باللغة الانجليزية',
     'Select_Grade' => '-- حدد المرحلة --',
     'Name_Grade' => 'اسم المرحلة',
-    'Notes' => 'Notes',
+    'Notes' => 'ملاحضات',
     'submit' => 'حفظ البيانات',
     'Name_Section'=>'اسم القسم',
     'Name_Class'=>'اسم الصف',

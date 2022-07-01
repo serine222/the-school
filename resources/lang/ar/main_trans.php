@@ -27,15 +27,21 @@ return [
     'List_Teachers' => 'قائمة المعلمين',
 
     'Attendance'=>'الحضور والغياب',
+    'Attendances'=>'التقارير',
+    'profile'=>'الملف الشخصي',
+
     // 'Exams'=>'الامتحانات',
     // 'library'=>'المكتبة',
     'Onlineclasses'=>'حصص اونلاين',
+    'OnlineclassesZoom'=>'حصص اونلاين مع زوم',
     'Settings'=>'الاعدادات',
     'Name_Programer' => 'سرين سهيلة',
     'Users'=>'المستخدمين',
     'Copyright' => 'جميع الحقوق محفوظة ',
 
-    'Name_Programer' => 'سيوسيو سهيلة رقيق سيرين'
+    'Name_Programer' => 'سيوسيو سهيلة رقيق سيرين',
+    'profile'=>' الملف الشخصي',
+
 
 
 

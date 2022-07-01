@@ -8,6 +8,9 @@ return [
     'email' => 'email',
     'password' => 'password',
     'gender' => 'gender',
+    'show_password'=>'Show password',
+    'edit_data'=>'Edit ',
+
 
     'blood_type' => 'blood_type',
     'Date_of_Birth' => 'Date_of_Birth',
@@ -23,6 +26,9 @@ return [
     'Attachments' => 'Attachments',
     'Student_details' => 'Student Details',
     'Deleted_Student' => 'Delete student data',
+    'edit_student' => 'Edit student data',
+    'show_student' => 'show student data',
+
     'Deleted_Student_tilte' => 'Are you sure to delete the student ?',
     'Delete_attachment' => 'Delete_attachment',
     'Delete_attachment_tilte' => 'Are you sure to delete the attachment?',
@@ -31,6 +37,30 @@ return [
     'Download' => 'Download',
     'delete' => 'Delete',
 
+    'Old_grades' => 'Old grade',
+    'New_grades' => 'New grade ',
+    'graduation_process' => 'Are you sure about canceling the graduation process?',
+    'return_student' => 'return student',
+    'cancel_all' => 'cancel all',
+    'cancel_student' => 'Are you sure about this process?',
+
+    'student_graduate' => 'student graduate',
+    'student_retreat' => 'student retreat',
+
+
+    'academic_year' => 'Academic year',
+    'previous_section' => 'Previous section',
+    'previous_classroom' => 'Previous classroom',
+    'previous_grade' => 'Previous grade',
+
+    'this_grade' => 'This grade',
+    'this_year' => 'This year',
+    'this_classroom' => 'This classroom ',
+    'this_section' => 'This section',
+
+
+    'name_ar' =>'Name in arabic',
+    'name_en' =>'Name in english',
     'Next' => 'Next',
     'Back' => 'Back',
     'Finish' => 'Finish',
@@ -41,4 +71,3 @@ return [
 
 
 ];
-

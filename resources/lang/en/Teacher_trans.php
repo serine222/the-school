@@ -14,5 +14,10 @@ return [
     'Joining_Date'=>'Joining_Date',
     'Address'=>'Address',
     'Select_teacher'=>'Select teacher',
+    'Processes' => 'Processes',
+    'Welcome'=>'Welcome',
+    'profile'=>' Profile',
+
+
 
 ];

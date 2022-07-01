@@ -2,17 +2,17 @@
 @section('css')
     @toastr_css
 @section('title')
-    {{ trans('Sections_trans.title_page') }}: الحضور والغياب
+    {{ trans('Sections_trans.title_page') }}:
 @stop
 @endsection
 @section('page-header')
     <!-- breadcrumb -->
 @section('PageTitle')
-    {{ trans('Sections_trans.title_page') }}: الحضور والغياب
+    {{ trans('Sections_trans.title_page') }}:
 @stop
 <!-- breadcrumb -->
 @endsection
-@section('content')
+@section('content') 
     <!-- row -->
     <div class="row">
         <div class="col-md-12 mb-30">
@@ -74,11 +74,11 @@
                                                                         <td>{{ $list_Sections->Name_Section }}</td>
                                                                         <td>{{ $list_Sections->My_classs->Name_Class }}</td>
                                                                         <td>
-                                                                            <label class="badge badge-{{$list_Sections->Status == 1 ? 'success':'danger'}}">{{$list_Sections->Status == 1 ? 'نشط':'غير نشط'}}</label>
+                                                                            <label class="badge badge-{{$list_Sections->Status == 1 ? 'success':'danger'}}">{{$list_Sections->Status == 1 ? 'نشط' :'غير نشط'}}</label>
                                                                         </td>
 
                                                                         <td>
-                                                                            <a href="{{route('Attendance.show',$list_Sections->id)}}" class="btn btn-warning btn-sm" role="button" aria-pressed="true">قائمة الطلاب</a>
+                                                                            <a href="{{route('Attendance.show',$list_Sections->id)}}" class="btn btn-warning btn-sm" role="button" aria-pressed="true">{{ trans('attendance.list_student') }}</a>
                                                                         </td>
                                                                     </tr>
                                                                 @endforeach

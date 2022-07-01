@@ -8,7 +8,7 @@
     <meta name="description" content="Webmin - Bootstrap 4 & Angular 5 Admin Dashboard Template" />
     <meta name="author" content="potenzaglobalsolutions.com" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <title>برنامج مورا سوفت لادارة المدارس</title>
+    <title>برنامج التعليم عن بعد</title>
 
     <!-- Favicon -->
     <link rel="shortcut icon" href="images/favicon.ico" />
@@ -38,41 +38,36 @@ preloader -->
         <!--=================================
 login-->
 
-        <section class="height-100vh d-flex align-items-center page-section-ptb login"
-            style="background-image: url('{{ asset('assets/images/sativa.png') }}');">
+        <section class="height-100vh d-flex align-items-center page-section-ptb login" style="background-color: #fff">
             <div class="container">
                 <div class="row justify-content-center no-gutters vertical-align">
-                    <div class="col-lg-4 col-md-6 login-fancy-bg bg"
-                        style="background-image: url('{{ asset('assets/images/login-inner-bg.jpg') }}');">
+                    <div class="col-lg-4 col-md-6 login-fancy-bg bg" style="background-color: #fff">
                         <div class="login-fancy">
-                            <h2 class="text-white mb-20">Hello world!</h2>
-                            <p class="mb-20 text-white">Create tailor-cut websites with the exclusive multi-purpose
-                                responsive template along with powerful features.</p>
-                            <ul class="list-unstyled  pos-bot pb-30">
+                            <h3>نخبة المستقبل</h3>
+                            <p class="mb-20 text-white"></p>
+                            {{-- <ul class="list-unstyled  pos-bot pb-30">
                                 <li class="list-inline-item"><a class="text-white" href="#"> Terms of Use</a>
                                 </li>
                                 <li class="list-inline-item"><a class="text-white" href="#"> Privacy Policy</a>
                                 </li>
-                            </ul>
+                            </ul> --}}
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-6 bg-white">
                         <div class="login-fancy pb-40 clearfix">
                             @if ($type == 'student')
                                 <h3 style="font-family: 'Cairo', sans-serif" class="mb-30">تسجيل دخول طالب</h3>
-                            @elseif($type == 'parent')
-                                <h3 style="font-family: 'Cairo', sans-serif" class="mb-30">تسجيل دخول ولي امر</h3>
                             @elseif($type == 'teacher')
                                 <h3 style="font-family: 'Cairo', sans-serif" class="mb-30">تسجيل دخول معلم</h3>
                             @else
                                 <h3 style="font-family: 'Cairo', sans-serif" class="mb-30">تسجيل دخول ادمن</h3>
                             @endif
-
                             @if (\Session::has('message'))
                                 <div class="alert alert-danger">
                                     <li>{!! \Session::get('message') !!}</li>
                                 </div>
                             @endif
+
                             <form method="POST" action="{{ route('login') }}">
                                 @csrf
 

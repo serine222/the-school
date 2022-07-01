@@ -14,6 +14,10 @@ return [
     'Joining_Date'=>'تاريخ التعين',
     'Address'=>'العنوان',
     'Select_teacher'=>'تحديد المعلم',
+    'Processes' => 'العمليات',
+    'Welcome'=>'مرحبا بك',
+    'profile'=>' الملف الشخصي',
+
 
 
 
