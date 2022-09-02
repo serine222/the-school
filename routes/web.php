@@ -34,6 +34,13 @@ Route::group(['namespace' => 'Auth'], function () {
     Route::get('/logout/{type}', 'LoginController@logout')->name('logout');
 
 
+    Route::post('student', 'StudentsController@store')->name('student.store');
+    Route::get('student', 'StudentsController@Create')->name('student.Create');
+
+    Route::get('teacher', 'TeachersController@create')->name('teacher.create');
+    Route::post('teacher', 'TeachersController@store')->name('teacher.store');
+
+
 });
 //==============================Translate all pages============================
 Route::group(

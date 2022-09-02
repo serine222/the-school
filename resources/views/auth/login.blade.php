@@ -101,8 +101,12 @@ login-->
                                 <div class="section-field">
                                     <div class="remember-checkbox mb-30">
                                         <input type="checkbox" class="form-control" name="two" id="two" />
-                                        <label for="two"> تذكرني</label>
-                                        <a href="#" class="float-right">هل نسيت كلمةالمرور ؟</a>
+                                        @if ($type == 'student')
+                                         <a href="{{route('student.create')}}" class="float-right">هل انت طالب جديد؟</a>
+
+                                         @elseif($type == 'teacher')
+                                             <a href="{{route('teacher.create')}}" class="float-right">هل انت استاذ جديد؟</a>
+                                         @endif
                                     </div>
                                 </div>
                                 <button class="button"><span>دخول</span><i class="fa fa-check"></i></button>
