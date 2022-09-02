@@ -102,8 +102,8 @@ login-->
                                     <div class="remember-checkbox mb-30">
                                         <input type="checkbox" class="form-control" name="two" id="two" />
                                         @if ($type == 'student')
-                                         <a href="{{route('student.create')}}" class="float-right">هل انت طالب جديد؟</a>
 
+                                         <a href="{{route('students.create')}}" class="float-right">هل انت طالب جديد؟</a>
                                          @elseif($type == 'teacher')
                                              <a href="{{route('teacher.create')}}" class="float-right">هل انت استاذ جديد؟</a>
                                          @endif

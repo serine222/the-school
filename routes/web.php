@@ -34,21 +34,28 @@ Route::group(['namespace' => 'Auth'], function () {
     Route::get('/logout/{type}', 'LoginController@logout')->name('logout');
 
 
-    Route::post('student', 'StudentsController@store')->name('student.store');
-    Route::get('student', 'StudentsController@Create')->name('student.Create');
+
+
+
+
 
     Route::get('teacher', 'TeachersController@create')->name('teacher.create');
     Route::post('teacher', 'TeachersController@store')->name('teacher.store');
 
 
+    Route::resource('students', 'StudentsController');
+
+    Route::get('/get_classrooms/{id}', 'StudentsController@getClassrooms');
+    Route::get('/get_Sections/{id}', 'StudentsController@Get_Sections');
+
 });
 //==============================Translate all pages============================
 Route::group(
-    [
-        'prefix' => LaravelLocalization::setLocale(),
-        'middleware' => ['localeSessionRedirect', 'localizationRedirect', 'localeViewPath', 'auth']
-    ],
-    function () {
+[
+    'prefix' => LaravelLocalization::setLocale(),
+    'middleware' => ['localeSessionRedirect', 'localizationRedirect', 'localeViewPath', 'auth']
+],
+function () {
 
         //==============================dashboard============================
         Route::get('/dashboard', 'HomeController@dashboard')->name('dashboard');

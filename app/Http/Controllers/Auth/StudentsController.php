@@ -40,7 +40,7 @@ class StudentsController extends Controller
         }
 
 
-        public function create()
+        public function Create()
         {
             $data['my_classes'] = Grade::all();
             $data['Genders'] = Gender::all();
@@ -48,7 +48,7 @@ class StudentsController extends Controller
             return view('pages.Students.new', $data);
         }
 
-        public function store(StoreStudentsRequest $request)
+        public function Store(StoreStudentsRequest $request)
         {
 
 
@@ -101,65 +101,19 @@ class StudentsController extends Controller
             }
 
 
+        // Get Classrooms
+    public function getClassrooms($id)
+    {
+        return Classroom::where("Grade_id", $id)->pluck("Name_Class", "id");
 
-
-
-        public function show($id){
-
-         return $this->Student->Show_Student($id);
-
-        }
-
-
-
-        public function edit($id)
-        {
-           return $this->Student->Edit_Student($id);
-        }
-
-
-        public function update(StoreStudentsRequest $request)
-        {
-
-            return $this->Student->Update_Student($request);
-
-        }
-
-
-        public function destroy(Request $request)
-        {
-            return $this->Student->Delete_Student($request);
-        }
-
-        public function Get_classrooms($id)
-        {
-            return $this->Student->Get_classrooms($id);
-        }
-
-        public function Get_Sections($id)
-        {
-            return $this->Student->Get_Sections($id);
-        }
-
-
-        public function Download_attachment($studentsname ,$filename)
-        {
-
-        return $this->Student->Download_attachment($studentsname,$filename);
-        ;
     }
 
-    public function Delete_attachment(Request $request)
-    {
-            return $this->Student->Delete_attachment($request);
-        }
+    //Get Sections
+    public function Get_Sections($id){
 
+        return Section::where("Class_id", $id)->pluck("Name_Section", "id");
 
-
-        public function Upload_attachment(Request $request)
-        {
-            return $this->Student->Upload_attachment($request);
-        }
+    }
 
 
 }
