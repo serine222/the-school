@@ -37,14 +37,18 @@ Route::group(['namespace' => 'Auth'], function () {
 
 
 
-
+    Route::group(
+        [
+            'prefix' => LaravelLocalization::setLocale(),
+        ],
+        function () {
 
     Route::get('teacher', 'TeachersController@create')->name('teacher.create');
     Route::post('teacher', 'TeachersController@store')->name('teacher.store');
 
 
     Route::resource('students', 'StudentsController');
-
+        });
     Route::get('/get_classrooms/{id}', 'StudentsController@getClassrooms');
     Route::get('/get_Sections/{id}', 'StudentsController@Get_Sections');
 
